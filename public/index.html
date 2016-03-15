@@ -2,7 +2,7 @@
 <html ng-app='myApp'>
 <head>
 	<title>Contact List app</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css">
 
 </head>
 <body>
@@ -24,19 +24,17 @@
 			<td><input class="form-control" ng-model='contact.email'></input></td>
 			<td><input class="form-control" ng-model='contact.number'></input></td>
 			<td>
-				<button class="btn btn-primary" ng-hide='edit' ng-click='addContact()'>Add Contact</button>
-				<button class="btn btn-info" ng-show='edit' ng-click="updateData()">Update Data</button>
-			</td>
-			<td>
-				<button class="btn btn-info" ng-show='edit' ng-click='deselect()'>Clear</button>
+				<button class="btn btn-primary" ng-hide='edit' ng-click='addContact()'> <span class="glyphicon glyphicon-save"></span> Add</button>
+				<button class="btn btn-info" ng-show='edit' ng-click="updateData()"> <span class="glyphicon glyphicon-send"></span> Update</button>
+				<button class="btn btn-info" ng-show='edit' ng-click='deselect()'> <span class="glyphicon glyphicon-refresh"></span> Clear</button>
 			</td>
 		</tr>
 			<tr ng-repeat='x in contactlist'>
 				<td>{{x.name}}</td>
 				<td>{{x.email}}</td>
 				<td>{{x.number}}</td>
-				<td><button class="btn btn-danger" ng-click='removeData(x._id)'>Delete Data</button></td>
-				<td><button class="btn btn-warning" ng-click='editData(x._id)'>Edit Data</button></td>
+				<td><button class="btn btn-warning" ng-click='editData(x._id)'> <span class="glyphicon glyphicon-edit"></span> Edit</button></td>
+				<!-- <td><button class="btn btn-danger" ng-click='removeData(x._id)'>Delete Data</button></td> -->
 			</tr>
 		</tbody>
 	</table>
